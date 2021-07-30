@@ -26,18 +26,21 @@
     },
     "tasks": [
         {
-            "label": "test shell",
-            "command": "which python",
-            "type": "shell",
-            "group": "build",
-            "problemMatcher": []
-        },
-        {
-            "label": "Build UI",
-            "command": "npm run build-ui",
+            "label": "Generate UI",
+            "command": "npm run generate-ui",
             "type": "shell",
             "group": "build",
             "problemMatcher": [],
+        },
+        {
+            "label": "Build Executable",
+            "command": "npm run build-exe",
+            "type": "shell",
+            "group": "build",
+            "problemMatcher": [],
+            "dependsOn": [
+                "Generate UI"
+            ]
         }
     ]
 }

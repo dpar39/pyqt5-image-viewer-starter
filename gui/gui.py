@@ -2,7 +2,7 @@ import datetime
 import logging
 import urllib.request
 
-from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot
+from PyQt5.QtCore import QByteArray, QSettings, QThread, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QImage
 from PyQt5.QtWidgets import QMainWindow
 
@@ -38,8 +38,15 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.settings = QSettings('Pardi.dev', 'pyqt5-demo') 
+
+        self.restoreGeometry(self.settings.value("geometry", type=QByteArray))
+        self.restoreState(self.settings.value("windowState", type=QByteArray))
+
         self.load_thread = None
         self.load_image()
+
+
 
     def load_image(self):
         self.measure_start_time = datetime.datetime.now()
@@ -51,3 +58,7 @@ class MainWindow(QMainWindow):
     def on_image_loaded(self, img):
         self.ui.widgetImageViewer.set_image(img)
         self.update()
+
+    def resizeEvent(self, e):
+        self.settings.setValue("geometry", self.saveGeometry())
+        self.settings.setValue("windowState", self.saveState())
