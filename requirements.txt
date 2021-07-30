@@ -1,0 +1,6 @@
+stardist
+pywin32
+imutils
+PyQt5-tools
+opencv-python
+pyinstaller

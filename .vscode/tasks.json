@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "linux": {
+        "options": {
+            "shell": {
+                "executable": "bash",
+                "args": [
+                    "--init-file",
+                    "env/bin/activate",
+                    "-ci",
+                ]
+            }
+        },
+    },
+    "windows": {
+        "options": {
+            "shell": {
+                "executable": "cmd.exe",
+                "args": [
+                    "/C",
+                    "env\\Scripts\\activate.bat",
+                    "&"
+                ]
+            }
+        }
+    },
+    "tasks": [
+        {
+            "label": "test shell",
+            "command": "which python",
+            "type": "shell",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build UI",
+            "command": "npm run build-ui",
+            "type": "shell",
+            "group": "build",
+            "problemMatcher": [],
+        }
+    ]
+}
