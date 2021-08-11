@@ -10,3 +10,7 @@ __pycache__
 .prettierrc
 .pylintrc
 log.txt
+gui/*.c
+gui/*.pyd
+gui/*.so
+gui/*.dylib
