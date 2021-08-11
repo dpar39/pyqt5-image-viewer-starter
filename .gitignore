@@ -6,7 +6,6 @@
 /.vscode/tags
 __pycache__
 *_ui.py
-*.spec
 .prettierrc
 .pylintrc
 log.txt
