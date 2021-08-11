@@ -6,7 +6,7 @@ from PyQt5.QtCore import QByteArray, QSettings, QThread, pyqtSignal, pyqtSlot
 from PyQt5.QtGui import QImage
 from PyQt5.QtWidgets import QMainWindow
 
-from gui.gui_ui import Ui_MainWindow
+from gui.main_window_ui import Ui_MainWindow
 
 
 class LoadImageThread(QThread):

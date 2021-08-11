@@ -8,6 +8,6 @@
         "setup-env": "pip install virtualenv && python -m virtualenv env && call env\\Scripts\\activate.bat && pip install -r requirements.txt",
         "generate-ui": "python gui/runpyuic.py",
         "start": "npm run build-ui && python main.py", 
-        "build-exe": "pyinstaller.exe main.py --onefile --name pyqt5demo --windowed --icon resources/lena.ico"
+        "build-exe": "pyinstaller.exe main.py --name pyqt5demo --windowed --icon resources/lena.ico"
     }
 }

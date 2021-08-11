@@ -9,10 +9,11 @@ import logging
 from PyQt5.QtCore import QSize
 from PyQt5 import QtWidgets
 
-from gui.gui import MainWindow
+import gui
+from gui.main_window import MainWindow
 
-if __name__ == '__main__':
-    # Enable logging
+def main():
+     # Enable logging
     logger = logging.getLogger()
     log_formatter = logging.Formatter("%(asctime)s [%(threadName)-12.12s] [%(levelname)-5.5s] %(message)s")
     fh = logging.FileHandler("log.txt")
@@ -42,3 +43,6 @@ if __name__ == '__main__':
     except Exception as ex:
         logger.critical('Unahandled exception has ocurred: %s', ex, exc_info=True)
         sys.exit(1)
+
+if __name__ == '__main__':
+    main()
