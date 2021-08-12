@@ -19,13 +19,16 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      - name: Build with PyInstaller
+      - name: Create dist with PyInstaller
         run:  npm run build-exe
-
-
-      - name: Archive Release
+      - name: Archive build
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
           filename: 'release.zip'
           path: dist/pyqt5demo
+      - name: Upload Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
