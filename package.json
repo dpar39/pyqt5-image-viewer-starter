@@ -9,6 +9,6 @@
         "generate-ui": "python gui/runpyuic.py",
         "start": "npm run build-ui && python main.py", 
         "build-pyds": "python setup.py build_ext --inplace",
-        "build-exe": "npm run build-pyds && pyinstaller.exe pyqt5demo.spec"
+        "build-exe": "npm run build-pyds && pyinstaller.exe pyqt5demo-pyd.spec"
     }
 }
