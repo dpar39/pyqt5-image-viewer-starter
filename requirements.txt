@@ -1,6 +1,8 @@
 stardist
 pywin32
 imutils
+wheel
 PyQt5-tools
 opencv-python
 pyinstaller
+Cython
