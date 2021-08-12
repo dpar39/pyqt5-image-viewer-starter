@@ -4,5 +4,5 @@ imutils
 wheel
 PyQt5-tools
 #opencv-python
-pyinstaller
+pyinstaller==4.1
 Cython
